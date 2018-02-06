@@ -11,8 +11,7 @@
   $(document).ready(function() {
 
   const canvas=$('#pixelCanvas');
-  let table, form, color, gridHeight, gridWidth;
-  table=$('table');
+  let form, color, gridHeight, gridWidth;
   form=$('form');
   color=$('input[type="color"]');
   gridHeight=$('#inputHeight');
@@ -39,7 +38,7 @@
   });
 
   //doubleclick to remove color
-  table.on('dblclick','td',function(evt){
+  canvas.on('dblclick','td',function(evt){
     $(evt.target).css('background-color','white');
   });
 
