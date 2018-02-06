@@ -10,8 +10,8 @@
 
   $(document).ready(function() {
 
-  var canvas, table, form, color, gridHeight, gridWidth;
-  canvas=$('#pixelCanvas');
+  const canvas=$('#pixelCanvas');
+  let table, form, color, gridHeight, gridWidth;
   table=$('table');
   form=$('form');
   color=$('input[type="color"]');
@@ -21,9 +21,9 @@
   function makeGrid() {
   canvas.html('');
      canvas.css('background-color','white');
-  for(var x=1; x<=gridHeight.val() ;x++){
+  for(let x=1; x<=gridHeight.val() ;x++){
     canvas.append('<tr></tr>');}
-    for(var y=1; y<=gridWidth.val() ;y++){
+    for(let y=1; y<=gridWidth.val() ;y++){
     $('tr').append('<td></td>');
   }}
 
@@ -34,6 +34,7 @@
 
   //click to color
   canvas.on('click','td',function(evt){
+    evt.preventDefault()
   $(evt.target).css('background-color',color.val());
   });
 
